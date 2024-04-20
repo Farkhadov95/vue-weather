@@ -113,7 +113,7 @@
 import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
 
-const APP_ID = "8d57e60fee44778a09b34670a18882a5";
+const APP_ID = import.meta.env.VITE_APP_ID;
 const route = useRoute();
 const router = useRouter();
 

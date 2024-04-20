@@ -15,6 +15,7 @@ import { useRouter } from "vue-router";
 
 const savedCities = ref([]);
 const router = useRouter();
+const APP_ID = import.meta.env.VITE_APP_ID;
 
 const getCities = async () => {
   if (localStorage.getItem("savedCities")) {
@@ -24,7 +25,7 @@ const getCities = async () => {
     savedCities.value.forEach((city) => {
       requests.push(
         axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lon}&appid=8d57e60fee44778a09b34670a18882a5&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lon}&appid=${APP_ID}&units=metric`
         )
       );
     });
