@@ -139,6 +139,9 @@ async function getWeatherData() {
       });
     }
 
+    //Flicker Delay
+    await new Promise((res) => setTimeout(res, 1000));
+
     return response.data;
   } catch (error) {
     console.log(error);
